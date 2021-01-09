@@ -21,4 +21,7 @@ class IntraDayPresenter: IntraDayPresenterProtocol {
         self.view?.displayIntraDayResponse(withResponse: response)
     }
     
+    func displayIntraDayError(withError error: Error) {
+        self.view?.displayIntraDayError(withError: error)
+    }
 }

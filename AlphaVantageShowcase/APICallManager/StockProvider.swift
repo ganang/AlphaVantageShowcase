@@ -59,6 +59,8 @@ public class StockProvider: StockService {
             return
         }
         
+        print(url)
+        
         urlSession.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 self.errorHandler(onErrorCallback: onError, error: StockError.errorFromApi)
@@ -82,20 +84,25 @@ public class StockProvider: StockService {
                     onSuccess(response)
                 }
             } catch let DecodingError.dataCorrupted(context) {
-                   print(context)
-               } catch let DecodingError.keyNotFound(key, context) {
-                   print("Key '\(key)' not found:", context.debugDescription)
-                   print("codingPath:", context.codingPath)
-               } catch let DecodingError.valueNotFound(value, context) {
-                   print("Value '\(value)' not found:", context.debugDescription)
-                   print("codingPath:", context.codingPath)
-               } catch let DecodingError.typeMismatch(type, context)  {
-                   print("Type '\(type)' mismatch:", context.debugDescription)
-                   print("codingPath:", context.codingPath)
-               } catch {
-                   print("error: ", error)
-               }
-            }.resume()
+                self.errorHandler(onErrorCallback: onError, error: StockError.invalidResponse)
+                print(context)
+            } catch let DecodingError.keyNotFound(key, context) {
+                self.errorHandler(onErrorCallback: onError, error: StockError.invalidResponse)
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.valueNotFound(value, context) {
+                self.errorHandler(onErrorCallback: onError, error: StockError.invalidResponse)
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.typeMismatch(type, context)  {
+                self.errorHandler(onErrorCallback: onError, error: StockError.invalidResponse)
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch {
+                self.errorHandler(onErrorCallback: onError, error: StockError.invalidResponse)
+                print("error: ", error)
+            }
+        }.resume()
     }
     
     // handle error here

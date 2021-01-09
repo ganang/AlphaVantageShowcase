@@ -31,6 +31,11 @@
 		A493BF3D25A98E8800FD57E4 /* ConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF3C25A98E8800FD57E4 /* ConfigureViewController.swift */; };
 		A493BF4625A9AB3700FD57E4 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF4525A9AB3700FD57E4 /* KeychainItemAccessibility.swift */; };
 		A493BF4E25A9AB7400FD57E4 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF4D25A9AB7400FD57E4 /* KeychainWrapper.swift */; };
+		A493BF6525A9C07200FD57E4 /* DailyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF6425A9C07200FD57E4 /* DailyPresenter.swift */; };
+		A493BF6D25A9C07D00FD57E4 /* DailyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF6C25A9C07D00FD57E4 /* DailyInteractor.swift */; };
+		A493BF7225A9C08800FD57E4 /* DailyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF7125A9C08800FD57E4 /* DailyProtocol.swift */; };
+		A493BF7725A9C09600FD57E4 /* DailyWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF7625A9C09600FD57E4 /* DailyWireframe.swift */; };
+		A4CF359925A9C98B004852FD /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF359825A9C98B004852FD /* DailyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,11 @@
 		A493BF3C25A98E8800FD57E4 /* ConfigureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureViewController.swift; sourceTree = "<group>"; };
 		A493BF4525A9AB3700FD57E4 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		A493BF4D25A9AB7400FD57E4 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		A493BF6425A9C07200FD57E4 /* DailyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPresenter.swift; sourceTree = "<group>"; };
+		A493BF6C25A9C07D00FD57E4 /* DailyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyInteractor.swift; sourceTree = "<group>"; };
+		A493BF7125A9C08800FD57E4 /* DailyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyProtocol.swift; sourceTree = "<group>"; };
+		A493BF7625A9C09600FD57E4 /* DailyWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWireframe.swift; sourceTree = "<group>"; };
+		A4CF359825A9C98B004852FD /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +177,10 @@
 		A4253BCD25A836F0000424CF /* Daily Screen */ = {
 			isa = PBXGroup;
 			children = (
+				A493BF6325A9C05B00FD57E4 /* Presenter */,
+				A493BF6225A9C05100FD57E4 /* Interactor */,
+				A493BF6125A9C04A00FD57E4 /* Protocol */,
+				A493BF6025A9C04100FD57E4 /* Wireframe */,
 				A4253C1B25A84EA6000424CF /* Entity */,
 				A4253BD525A838AE000424CF /* View */,
 			);
@@ -198,6 +212,7 @@
 		A4253BD525A838AE000424CF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4CF359725A9C97E004852FD /* Cell */,
 				A4253BD625A838D3000424CF /* DailyViewController.swift */,
 			);
 			path = View;
@@ -302,6 +317,46 @@
 				A493BF4D25A9AB7400FD57E4 /* KeychainWrapper.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A493BF6025A9C04100FD57E4 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A493BF7625A9C09600FD57E4 /* DailyWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		A493BF6125A9C04A00FD57E4 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A493BF7125A9C08800FD57E4 /* DailyProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A493BF6225A9C05100FD57E4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A493BF6C25A9C07D00FD57E4 /* DailyInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A493BF6325A9C05B00FD57E4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A493BF6425A9C07200FD57E4 /* DailyPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A4CF359725A9C97E004852FD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A4CF359825A9C98B004852FD /* DailyCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,14 +499,19 @@
 				A4253C0725A846A5000424CF /* StockProvider.swift in Sources */,
 				A493BF4E25A9AB7400FD57E4 /* KeychainWrapper.swift in Sources */,
 				A4253B9A25A836CB000424CF /* SceneDelegate.swift in Sources */,
+				A4CF359925A9C98B004852FD /* DailyCell.swift in Sources */,
 				A4253BD725A838D3000424CF /* DailyViewController.swift in Sources */,
 				A4253C0225A84509000424CF /* IntraDayInteractor.swift in Sources */,
 				A4253BF025A843A9000424CF /* IntraDayWireframe.swift in Sources */,
 				A4253C1D25A84EBC000424CF /* DailyResponse.swift in Sources */,
+				A493BF6525A9C07200FD57E4 /* DailyPresenter.swift in Sources */,
 				A4253BD025A83794000424CF /* MainViewController.swift in Sources */,
 				A4253C3525A87736000424CF /* IntraDayCell.swift in Sources */,
 				A4253BFD25A844B3000424CF /* IntraDayPresenter.swift in Sources */,
+				A493BF7225A9C08800FD57E4 /* DailyProtocol.swift in Sources */,
+				A493BF7725A9C09600FD57E4 /* DailyWireframe.swift in Sources */,
 				A4253BF525A843D0000424CF /* IntraDayProtocol.swift in Sources */,
+				A493BF6D25A9C07D00FD57E4 /* DailyInteractor.swift in Sources */,
 				A493BF3625A98CC400FD57E4 /* LocalStorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

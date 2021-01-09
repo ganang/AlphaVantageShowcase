@@ -7,18 +7,23 @@
 
 import UIKit
 
-public enum Sorting: String {
-    case open
-    case low
-    case high
-    case dateTime
-}
-
 class IntraDayViewController: UIViewController {
     
     var presenter: IntraDayPresenterProtocol?
     var timeseries: [TimeSeriesIntraDay]?
+    var rawTimeseries: [TimeSeriesIntraDay]?
     var symbol: String = ""
+    
+    lazy var sortingButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("SortBy: Date/Time", for: .normal)
+        button.titleLabel?.font =  .systemFont(ofSize: 12)
+        button.addTarget(self, action: #selector(handleSorting), for: .touchUpInside)
+        button.backgroundColor = UIColor.init(displayP3Red: 0/255, green: 0/255, blue: 0/255, alpha: 0.6)
+        
+        return button
+    }()
     
     lazy var intraDaytableView: UITableView = {
         let tableView = UITableView()
@@ -80,6 +85,7 @@ class IntraDayViewController: UIViewController {
     
     func setupInterfaceComponent() {
         view.addSubview(intraDaytableView)
+        view.addSubview(sortingButton)
         intraDaytableView.tableHeaderView = intraDaySearchBar
     }
     
@@ -87,22 +93,118 @@ class IntraDayViewController: UIViewController {
         intraDaytableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         intraDaytableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         intraDaytableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        intraDaytableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        intraDaytableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80).isActive = true
+        
+        sortingButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -92).isActive = true
+        sortingButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        sortingButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        sortingButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        sortingButton.layer.cornerRadius = 8
+    }
+    
+    @objc func handleSorting() {
+        
+        let timeseriesCount = timeseries?.count
+        
+        if (timeseriesCount != nil) {
+            handleShowAlert()
+        }
+        
+    }
+    
+    func handleShowAlert() {
+        let alert = UIAlertController(title: "Sorting", message: "Please Choose your Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Low", style: .default , handler:{ (UIAlertAction)in
+            
+            let sortingByLow = self.rawTimeseries?.sorted(by: { $0.low > $1.low })
+            
+            DispatchQueue.main.async {
+                self.sortingButton.setTitle("SortBy: Low", for: .normal)
+                self.timeseries = sortingByLow
+                self.intraDaytableView.reloadData()
+            }
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "High", style: .default , handler:{ (UIAlertAction)in
+            
+            let sortingByHigh = self.rawTimeseries?.sorted(by: { $0.high > $1.high })
+            
+            DispatchQueue.main.async {
+                self.sortingButton.setTitle("SortBy: High", for: .normal)
+                self.timeseries = sortingByHigh
+                self.intraDaytableView.reloadData()
+            }
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Open", style: .default , handler:{ (UIAlertAction)in
+            
+            let sortingByOpen = self.rawTimeseries?.sorted(by: { $0.open > $1.open })
+            
+            DispatchQueue.main.async {
+                self.sortingButton.setTitle("SortBy: Open", for: .normal)
+                self.timeseries = sortingByOpen
+                self.intraDaytableView.reloadData()
+            }
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Date/Time", style: .default , handler:{ (UIAlertAction)in
+            
+            let soringByDate = self.rawTimeseries?.sorted(by: { $0.dateTime > $1.dateTime })
+            
+            DispatchQueue.main.async {
+                self.sortingButton.setTitle("SortBy: Date/Time", for: .normal)
+                self.timeseries = soringByDate
+                self.intraDaytableView.reloadData()
+            }
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{ (UIAlertAction)in
+
+        }))
+        
+        
+        //uncomment for iPad Support
+        //alert.popoverPresentationController?.sourceView = self.view
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
+    func displayWarningSymbolAlert() {
+        let alert = UIAlertController(title: "Symbol Warning", message: "Please try using another symbol", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                                        switch action.style{
+                                        case .default:
+                                            print("cancel")
+                                        case .cancel:
+                                            print("cancel")
+                                        case .destructive:
+                                            print("cancel")
+                                        @unknown default: break
+                                        }}))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
 
 extension IntraDayViewController: IntraDayViewControllerProtocol {
+    func displayIntraDayError(withError error: Error) {
+        self.displayWarningSymbolAlert()
+    }
+    
     func displayIntraDayResponse(withResponse response: IntraDayResponse) {
         
-        let timeseriesFilter = response.timeSeriesIntraDay?.map {
+        self.rawTimeseries = response.timeSeriesIntraDay?.map {
             $0.value
         }
         
-        let sortingByOpen = timeseriesFilter?.sorted(by: { $0.open > $1.open })
-        let sortingByLow = timeseriesFilter?.sorted(by: { $0.low > $1.low })
-        let sortingByHigh = timeseriesFilter?.sorted(by: { $0.high > $1.high })
-        let soringByDate = timeseriesFilter?.sorted(by: { $0.dateTime > $1.dateTime })
+        let soringByDate = rawTimeseries?.sorted(by: { $0.dateTime > $1.dateTime })
         
         DispatchQueue.main.async {
             self.timeseries = soringByDate
@@ -121,10 +223,11 @@ extension IntraDayViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        print(self.symbol)
         let params = ["function": "TIME_SERIES_INTRADAY", "symbol": symbol, "interval": "15min"]
         
         self.presenter?.getIntraDay(withParams: params)
+        self.intraDaySearchBar.text = ""
+        self.symbol = ""
     }
     
 }

@@ -9,4 +9,5 @@ import UIKit
 
 struct Constants {
     static let KEY_INTRA_DAY_CELL = "IntraDay_Cell"
+    static let KEY_DAILY_CELL = "Daily_Cell"
 }
