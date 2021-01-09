@@ -9,12 +9,28 @@
 /* Begin PBXBuildFile section */
 		A4253B9825A836CB000424CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253B9725A836CB000424CF /* AppDelegate.swift */; };
 		A4253B9A25A836CB000424CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253B9925A836CB000424CF /* SceneDelegate.swift */; };
-		A4253B9C25A836CB000424CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253B9B25A836CB000424CF /* ViewController.swift */; };
-		A4253B9F25A836CB000424CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4253B9D25A836CB000424CF /* Main.storyboard */; };
 		A4253BA125A836CC000424CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4253BA025A836CC000424CF /* Assets.xcassets */; };
 		A4253BA425A836CC000424CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4253BA225A836CC000424CF /* LaunchScreen.storyboard */; };
 		A4253BAF25A836CC000424CF /* AlphaVantageShowcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253BAE25A836CC000424CF /* AlphaVantageShowcaseTests.swift */; };
 		A4253BBA25A836CC000424CF /* AlphaVantageShowcaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253BB925A836CC000424CF /* AlphaVantageShowcaseUITests.swift */; };
+		A4253BD025A83794000424CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253BCF25A83794000424CF /* MainViewController.swift */; };
+		A4253BD725A838D3000424CF /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253BD625A838D3000424CF /* DailyViewController.swift */; };
+		A4253BDF25A839A1000424CF /* IntraDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253BDE25A839A1000424CF /* IntraDayViewController.swift */; };
+		A4253BF025A843A9000424CF /* IntraDayWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253BEF25A843A9000424CF /* IntraDayWireframe.swift */; };
+		A4253BF525A843D0000424CF /* IntraDayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253BF425A843D0000424CF /* IntraDayProtocol.swift */; };
+		A4253BFD25A844B3000424CF /* IntraDayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253BFC25A844B3000424CF /* IntraDayPresenter.swift */; };
+		A4253C0225A84509000424CF /* IntraDayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C0125A84509000424CF /* IntraDayInteractor.swift */; };
+		A4253C0725A846A5000424CF /* StockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C0625A846A5000424CF /* StockProvider.swift */; };
+		A4253C1225A84AC5000424CF /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C1125A84AC5000424CF /* StockService.swift */; };
+		A4253C1725A84E5F000424CF /* IntraDayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C1625A84E5F000424CF /* IntraDayResponse.swift */; };
+		A4253C1D25A84EBC000424CF /* DailyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C1C25A84EBC000424CF /* DailyResponse.swift */; };
+		A4253C2C25A86E00000424CF /* TimeSeriesIntraDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C2B25A86E00000424CF /* TimeSeriesIntraDay.swift */; };
+		A4253C3525A87736000424CF /* IntraDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C3425A87736000424CF /* IntraDayCell.swift */; };
+		A4253C4A25A87B59000424CF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C4925A87B59000424CF /* Constant.swift */; };
+		A493BF3625A98CC400FD57E4 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF3525A98CC400FD57E4 /* LocalStorageService.swift */; };
+		A493BF3D25A98E8800FD57E4 /* ConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF3C25A98E8800FD57E4 /* ConfigureViewController.swift */; };
+		A493BF4625A9AB3700FD57E4 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF4525A9AB3700FD57E4 /* KeychainItemAccessibility.swift */; };
+		A493BF4E25A9AB7400FD57E4 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF4D25A9AB7400FD57E4 /* KeychainWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +54,6 @@
 		A4253B9425A836CB000424CF /* AlphaVantageShowcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaVantageShowcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4253B9725A836CB000424CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4253B9925A836CB000424CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4253B9B25A836CB000424CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A4253B9E25A836CB000424CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4253BA025A836CC000424CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4253BA325A836CC000424CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4253BA525A836CC000424CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +63,24 @@
 		A4253BB525A836CC000424CF /* AlphaVantageShowcaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlphaVantageShowcaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4253BB925A836CC000424CF /* AlphaVantageShowcaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaVantageShowcaseUITests.swift; sourceTree = "<group>"; };
 		A4253BBB25A836CC000424CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4253BCF25A83794000424CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A4253BD625A838D3000424CF /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		A4253BDE25A839A1000424CF /* IntraDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraDayViewController.swift; sourceTree = "<group>"; };
+		A4253BEF25A843A9000424CF /* IntraDayWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraDayWireframe.swift; sourceTree = "<group>"; };
+		A4253BF425A843D0000424CF /* IntraDayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraDayProtocol.swift; sourceTree = "<group>"; };
+		A4253BFC25A844B3000424CF /* IntraDayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraDayPresenter.swift; sourceTree = "<group>"; };
+		A4253C0125A84509000424CF /* IntraDayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraDayInteractor.swift; sourceTree = "<group>"; };
+		A4253C0625A846A5000424CF /* StockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockProvider.swift; sourceTree = "<group>"; };
+		A4253C1125A84AC5000424CF /* StockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockService.swift; sourceTree = "<group>"; };
+		A4253C1625A84E5F000424CF /* IntraDayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraDayResponse.swift; sourceTree = "<group>"; };
+		A4253C1C25A84EBC000424CF /* DailyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyResponse.swift; sourceTree = "<group>"; };
+		A4253C2B25A86E00000424CF /* TimeSeriesIntraDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesIntraDay.swift; sourceTree = "<group>"; };
+		A4253C3425A87736000424CF /* IntraDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraDayCell.swift; sourceTree = "<group>"; };
+		A4253C4925A87B59000424CF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A493BF3525A98CC400FD57E4 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
+		A493BF3C25A98E8800FD57E4 /* ConfigureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureViewController.swift; sourceTree = "<group>"; };
+		A493BF4525A9AB3700FD57E4 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		A493BF4D25A9AB7400FD57E4 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +131,17 @@
 		A4253B9625A836CB000424CF /* AlphaVantageShowcase */ = {
 			isa = PBXGroup;
 			children = (
+				A493BF3A25A98E6700FD57E4 /* Configuration Screen */,
+				A4253C4825A87B4B000424CF /* Utilities */,
+				A4253BE325A83CAC000424CF /* APICallManager */,
+				A4253BCE25A83708000424CF /* IntraDay Screen */,
+				A4253BCD25A836F0000424CF /* Daily Screen */,
 				A4253B9725A836CB000424CF /* AppDelegate.swift */,
 				A4253B9925A836CB000424CF /* SceneDelegate.swift */,
-				A4253B9B25A836CB000424CF /* ViewController.swift */,
-				A4253B9D25A836CB000424CF /* Main.storyboard */,
 				A4253BA025A836CC000424CF /* Assets.xcassets */,
 				A4253BA225A836CC000424CF /* LaunchScreen.storyboard */,
 				A4253BA525A836CC000424CF /* Info.plist */,
+				A4253BCF25A83794000424CF /* MainViewController.swift */,
 			);
 			path = AlphaVantageShowcase;
 			sourceTree = "<group>";
@@ -126,6 +162,146 @@
 				A4253BBB25A836CC000424CF /* Info.plist */,
 			);
 			path = AlphaVantageShowcaseUITests;
+			sourceTree = "<group>";
+		};
+		A4253BCD25A836F0000424CF /* Daily Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A4253C1B25A84EA6000424CF /* Entity */,
+				A4253BD525A838AE000424CF /* View */,
+			);
+			path = "Daily Screen";
+			sourceTree = "<group>";
+		};
+		A4253BCE25A83708000424CF /* IntraDay Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A4253BEE25A83F7B000424CF /* Entities */,
+				A4253BED25A83F74000424CF /* WIreframe */,
+				A4253BEC25A83F58000424CF /* Protocol */,
+				A4253BEB25A83F4F000424CF /* Interactor */,
+				A4253BEA25A83F42000424CF /* Presenter */,
+				A4253BD425A83895000424CF /* View */,
+			);
+			path = "IntraDay Screen";
+			sourceTree = "<group>";
+		};
+		A4253BD425A83895000424CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4253C3325A87720000424CF /* Cell */,
+				A4253BDE25A839A1000424CF /* IntraDayViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4253BD525A838AE000424CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4253BD625A838D3000424CF /* DailyViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4253BE325A83CAC000424CF /* APICallManager */ = {
+			isa = PBXGroup;
+			children = (
+				A493BF4425A9AB0700FD57E4 /* Services */,
+				A4253C0625A846A5000424CF /* StockProvider.swift */,
+			);
+			path = APICallManager;
+			sourceTree = "<group>";
+		};
+		A4253BEA25A83F42000424CF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A4253BFC25A844B3000424CF /* IntraDayPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A4253BEB25A83F4F000424CF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A4253C0125A84509000424CF /* IntraDayInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A4253BEC25A83F58000424CF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A4253BF425A843D0000424CF /* IntraDayProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A4253BED25A83F74000424CF /* WIreframe */ = {
+			isa = PBXGroup;
+			children = (
+				A4253BEF25A843A9000424CF /* IntraDayWireframe.swift */,
+			);
+			path = WIreframe;
+			sourceTree = "<group>";
+		};
+		A4253BEE25A83F7B000424CF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A4253C1625A84E5F000424CF /* IntraDayResponse.swift */,
+				A4253C2B25A86E00000424CF /* TimeSeriesIntraDay.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A4253C1B25A84EA6000424CF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A4253C1C25A84EBC000424CF /* DailyResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A4253C3325A87720000424CF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A4253C3425A87736000424CF /* IntraDayCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A4253C4825A87B4B000424CF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A4253C4925A87B59000424CF /* Constant.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A493BF3A25A98E6700FD57E4 /* Configuration Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A493BF3B25A98E7100FD57E4 /* View */,
+			);
+			path = "Configuration Screen";
+			sourceTree = "<group>";
+		};
+		A493BF3B25A98E7100FD57E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A493BF3C25A98E8800FD57E4 /* ConfigureViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A493BF4425A9AB0700FD57E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A4253C1125A84AC5000424CF /* StockService.swift */,
+				A493BF3525A98CC400FD57E4 /* LocalStorageService.swift */,
+				A493BF4525A9AB3700FD57E4 /* KeychainItemAccessibility.swift */,
+				A493BF4D25A9AB7400FD57E4 /* KeychainWrapper.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +409,6 @@
 			files = (
 				A4253BA425A836CC000424CF /* LaunchScreen.storyboard in Resources */,
 				A4253BA125A836CC000424CF /* Assets.xcassets in Resources */,
-				A4253B9F25A836CB000424CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +433,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4253B9C25A836CB000424CF /* ViewController.swift in Sources */,
+				A4253C1725A84E5F000424CF /* IntraDayResponse.swift in Sources */,
 				A4253B9825A836CB000424CF /* AppDelegate.swift in Sources */,
+				A4253C2C25A86E00000424CF /* TimeSeriesIntraDay.swift in Sources */,
+				A493BF4625A9AB3700FD57E4 /* KeychainItemAccessibility.swift in Sources */,
+				A4253C4A25A87B59000424CF /* Constant.swift in Sources */,
+				A4253C1225A84AC5000424CF /* StockService.swift in Sources */,
+				A493BF3D25A98E8800FD57E4 /* ConfigureViewController.swift in Sources */,
+				A4253BDF25A839A1000424CF /* IntraDayViewController.swift in Sources */,
+				A4253C0725A846A5000424CF /* StockProvider.swift in Sources */,
+				A493BF4E25A9AB7400FD57E4 /* KeychainWrapper.swift in Sources */,
 				A4253B9A25A836CB000424CF /* SceneDelegate.swift in Sources */,
+				A4253BD725A838D3000424CF /* DailyViewController.swift in Sources */,
+				A4253C0225A84509000424CF /* IntraDayInteractor.swift in Sources */,
+				A4253BF025A843A9000424CF /* IntraDayWireframe.swift in Sources */,
+				A4253C1D25A84EBC000424CF /* DailyResponse.swift in Sources */,
+				A4253BD025A83794000424CF /* MainViewController.swift in Sources */,
+				A4253C3525A87736000424CF /* IntraDayCell.swift in Sources */,
+				A4253BFD25A844B3000424CF /* IntraDayPresenter.swift in Sources */,
+				A4253BF525A843D0000424CF /* IntraDayProtocol.swift in Sources */,
+				A493BF3625A98CC400FD57E4 /* LocalStorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +488,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A4253B9D25A836CB000424CF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4253B9E25A836CB000424CF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A4253BA225A836CC000424CF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
