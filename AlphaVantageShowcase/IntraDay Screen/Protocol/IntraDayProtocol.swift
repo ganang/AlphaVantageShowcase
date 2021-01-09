@@ -9,6 +9,7 @@ import UIKit
 
 protocol IntraDayViewControllerProtocol: class {
     func displayIntraDayResponse(withResponse response: IntraDayResponse)
+    func displayIntraDayError(withError error: Error)
 }
 
 protocol IntraDayPresenterProtocol: class {
@@ -18,6 +19,7 @@ protocol IntraDayPresenterProtocol: class {
     
     func getIntraDay(withParams params: [String: String])
     func displayIntraDayResponse(withResponse response: IntraDayResponse)
+    func displayIntraDayError(withError error: Error)
 }
 
 protocol IntraDayInteractorProtocol: class {
