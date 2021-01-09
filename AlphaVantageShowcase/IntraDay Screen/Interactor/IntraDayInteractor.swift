@@ -15,7 +15,7 @@ class IntraDayInteractor: IntraDayInteractorProtocol {
         StockProvider.shared.getIntraDayStock(endpoint: .stock, params: params) { (response) in
             self.presenter?.displayIntraDayResponse(withResponse: response)
         } onError: { (error) in
-            print(error)
+            self.presenter?.displayIntraDayError(withError: error)
         }
 
     }

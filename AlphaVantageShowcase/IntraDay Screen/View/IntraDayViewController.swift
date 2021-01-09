@@ -7,13 +7,6 @@
 
 import UIKit
 
-public enum Sorting: String {
-    case open
-    case low
-    case high
-    case dateTime
-}
-
 class IntraDayViewController: UIViewController {
     
     var presenter: IntraDayPresenterProtocol?
@@ -183,9 +176,28 @@ class IntraDayViewController: UIViewController {
         })
     }
     
+    func displayWarningSymbolAlert() {
+        let alert = UIAlertController(title: "Symbol Warning", message: "Please try using another symbol", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                                        switch action.style{
+                                        case .default:
+                                            print("cancel")
+                                        case .cancel:
+                                            print("cancel")
+                                        case .destructive:
+                                            print("cancel")
+                                        @unknown default: break
+                                        }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension IntraDayViewController: IntraDayViewControllerProtocol {
+    func displayIntraDayError(withError error: Error) {
+        self.displayWarningSymbolAlert()
+    }
+    
     func displayIntraDayResponse(withResponse response: IntraDayResponse) {
         
         self.rawTimeseries = response.timeSeriesIntraDay?.map {
@@ -211,10 +223,11 @@ extension IntraDayViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        print(self.symbol)
         let params = ["function": "TIME_SERIES_INTRADAY", "symbol": symbol, "interval": "15min"]
         
         self.presenter?.getIntraDay(withParams: params)
+        self.intraDaySearchBar.text = ""
+        self.symbol = ""
     }
     
 }
