@@ -29,8 +29,11 @@ class MainViewController: UITabBarController {
 
         let dailyVC = DailyViewController()
         dailyVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        
+        let configVC = ConfigureViewController()
+        configVC.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 2)
 
-        let tabBarList = [intraDayVC, dailyVC]
+        let tabBarList = [intraDayVC, dailyVC, configVC]
         viewControllers = tabBarList
     }
 }

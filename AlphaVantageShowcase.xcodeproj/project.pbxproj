@@ -27,6 +27,8 @@
 		A4253C2C25A86E00000424CF /* TimeSeriesIntraDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C2B25A86E00000424CF /* TimeSeriesIntraDay.swift */; };
 		A4253C3525A87736000424CF /* IntraDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C3425A87736000424CF /* IntraDayCell.swift */; };
 		A4253C4A25A87B59000424CF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4253C4925A87B59000424CF /* Constant.swift */; };
+		A441091925AAD51F0025F6F0 /* ConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441091825AAD51F0025F6F0 /* ConfigCell.swift */; };
+		A441091E25AAD5390025F6F0 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441091D25AAD5390025F6F0 /* BaseCell.swift */; };
 		A493BF3625A98CC400FD57E4 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF3525A98CC400FD57E4 /* LocalStorageService.swift */; };
 		A493BF3D25A98E8800FD57E4 /* ConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF3C25A98E8800FD57E4 /* ConfigureViewController.swift */; };
 		A493BF4625A9AB3700FD57E4 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A493BF4525A9AB3700FD57E4 /* KeychainItemAccessibility.swift */; };
@@ -82,6 +84,8 @@
 		A4253C2B25A86E00000424CF /* TimeSeriesIntraDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesIntraDay.swift; sourceTree = "<group>"; };
 		A4253C3425A87736000424CF /* IntraDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraDayCell.swift; sourceTree = "<group>"; };
 		A4253C4925A87B59000424CF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A441091825AAD51F0025F6F0 /* ConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigCell.swift; sourceTree = "<group>"; };
+		A441091D25AAD5390025F6F0 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		A493BF3525A98CC400FD57E4 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		A493BF3C25A98E8800FD57E4 /* ConfigureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureViewController.swift; sourceTree = "<group>"; };
 		A493BF4525A9AB3700FD57E4 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
@@ -292,6 +296,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		A441091425AAD2DD0025F6F0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A441091825AAD51F0025F6F0 /* ConfigCell.swift */,
+				A441091D25AAD5390025F6F0 /* BaseCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A493BF3A25A98E6700FD57E4 /* Configuration Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +316,7 @@
 		A493BF3B25A98E7100FD57E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A441091425AAD2DD0025F6F0 /* Cell */,
 				A493BF3C25A98E8800FD57E4 /* ConfigureViewController.swift */,
 			);
 			path = View;
@@ -491,6 +505,7 @@
 				A4253C1725A84E5F000424CF /* IntraDayResponse.swift in Sources */,
 				A4253B9825A836CB000424CF /* AppDelegate.swift in Sources */,
 				A4253C2C25A86E00000424CF /* TimeSeriesIntraDay.swift in Sources */,
+				A441091925AAD51F0025F6F0 /* ConfigCell.swift in Sources */,
 				A493BF4625A9AB3700FD57E4 /* KeychainItemAccessibility.swift in Sources */,
 				A4253C4A25A87B59000424CF /* Constant.swift in Sources */,
 				A4253C1225A84AC5000424CF /* StockService.swift in Sources */,
@@ -500,6 +515,7 @@
 				A493BF4E25A9AB7400FD57E4 /* KeychainWrapper.swift in Sources */,
 				A4253B9A25A836CB000424CF /* SceneDelegate.swift in Sources */,
 				A4CF359925A9C98B004852FD /* DailyCell.swift in Sources */,
+				A441091E25AAD5390025F6F0 /* BaseCell.swift in Sources */,
 				A4253BD725A838D3000424CF /* DailyViewController.swift in Sources */,
 				A4253C0225A84509000424CF /* IntraDayInteractor.swift in Sources */,
 				A4253BF025A843A9000424CF /* IntraDayWireframe.swift in Sources */,

@@ -178,19 +178,15 @@ extension DailyViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         guard let count = self.arrayOfText?.count else { return }
+        let outputsize = LocalStorageService.shared.getOutputSize()
         
         if (count > 0 && count < 4) {
             if let symbols = self.symbols {
                 
-                self.dailyTimeseries = []
-                self.showSymbols = []
-                self.dailySearchBar.text = ""
-                self.arrayOfText = []
-                
                 for symbol in symbols {
                     timeseriesGroup.enter()
                     
-                    let params = ["function": "TIME_SERIES_DAILY_ADJUSTED", "symbol": symbol, "outputsize": "compact"]
+                    let params = ["function": "TIME_SERIES_DAILY_ADJUSTED", "symbol": symbol, "outputsize": outputsize]
                     
                     self.presenter?.getDaily(withParams: params)
                 }
@@ -200,6 +196,11 @@ extension DailyViewController : UISearchBarDelegate {
         } else {
             self.showWarningExceedSymbols()
         }
+        
+        self.dailyTimeseries = []
+        self.showSymbols = []
+        self.dailySearchBar.text = ""
+        self.arrayOfText = []
         
     }
     
