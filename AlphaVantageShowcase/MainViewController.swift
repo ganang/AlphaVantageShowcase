@@ -25,13 +25,13 @@ class MainViewController: UITabBarController {
     
     func configureTabbar() {
         let intraDayVC = IntraDayViewController()
-        intraDayVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        intraDayVC.tabBarItem = UITabBarItem.init(title: "IntraDay", image: UIImage(systemName: "timer"), selectedImage: UIImage(systemName: "timer"))
 
         let dailyVC = DailyViewController()
-        dailyVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        dailyVC.tabBarItem = UITabBarItem.init(title: "Daily", image: UIImage(systemName: "calendar"), selectedImage: UIImage(systemName: "calendar"))
         
         let configVC = ConfigureViewController()
-        configVC.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 2)
+        configVC.tabBarItem = UITabBarItem.init(title: "Setting", image: UIImage(named: "settings"), selectedImage: UIImage(named: "settings"))
 
         let tabBarList = [intraDayVC, dailyVC, configVC]
         viewControllers = tabBarList
