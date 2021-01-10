@@ -223,7 +223,10 @@ extension IntraDayViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        let params = ["function": "TIME_SERIES_INTRADAY", "symbol": symbol, "interval": "15min"]
+        let interval = LocalStorageService.shared.getInterval()
+        let outputsize = LocalStorageService.shared.getOutputSize()
+        
+        let params = ["function": "TIME_SERIES_INTRADAY", "symbol": symbol, "interval": interval, "outputsize": outputsize]
         
         self.presenter?.getIntraDay(withParams: params)
         self.intraDaySearchBar.text = ""
