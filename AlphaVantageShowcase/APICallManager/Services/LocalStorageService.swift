@@ -9,10 +9,10 @@ import Foundation
 
 class LocalStorageService {
     
-    private static let shared = LocalStorageService()
+    static let shared = LocalStorageService()
     
     // USER DEFAULT
-    private let defaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
     
     // get interval on local storage
     func getInterval() -> String {
@@ -53,5 +53,15 @@ class LocalStorageService {
     func cleanOutputSize(){
         defaults.set(nil, forKey: "outputsize")
         defaults.synchronize()
+    }
+    
+    func setApikey(withApiKey apikey: String, withKey key: String) {
+        KeychainWrapper.standard.set(apikey, forKey: key)
+    }
+    
+    func getApikey() -> String {
+        let apikey = KeychainWrapper.standard.string(forKey: "apikey")
+        
+        return apikey ?? ""
     }
 }

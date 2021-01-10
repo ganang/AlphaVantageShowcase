@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         UINavigationBar.appearance().isTranslucent = false
         
-        KeychainWrapper.standard.set("61F1SVWHXJH7NI2E", forKey: "apikey")
+        if (KeychainWrapper.standard.string(forKey: "apikey") == nil) {
+            LocalStorageService.shared.setApikey(withApiKey: "61F1SVWHXJH7NI2E", withKey: "apikey")
+        }
         
         return true
     }

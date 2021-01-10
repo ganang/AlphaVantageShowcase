@@ -15,7 +15,7 @@ public class StockProvider: StockService {
     // get api key and base url from user defined setting
     private let baseUrl = "https://www.alphavantage.co"
 //    private let apiKey = "61F1SVWHXJH7NI2E"
-    private let apiKey = KeychainWrapper.standard.string(forKey: "apikey")
+    private let apiKey = LocalStorageService.shared.getApikey()
     
     private let urlSession = URLSession.shared
     
